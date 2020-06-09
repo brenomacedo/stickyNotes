@@ -12,19 +12,25 @@ interface Task {
 
 export default {
     Query: {
-        tasks: () => {
+        getTasks: async () => {
             const tasksRepository = getConnectionManager().get().getRepository(Tasks)
+            const tasks = await tasksRepository.find()
+            return tasks
         }
     },
 
     Mutation: {
-        tasks: async (root: any, { description }: Task ) => {
+        createTask: async (root: any, { description }: Task ) => {
             const tasksRepository = getConnectionManager().get().getRepository(Tasks)
             const Task = await tasksRepository.insert({
                 description: description
             })
-
-            return Task
+            return { ...Task }
+        },
+        deleteTask: async (root: any, { id }: { id: number }) => {
+            const tasksRepository = getConnectionManager().get().getRepository(Tasks)
+            const Task = await tasksRepository.delete({ id })
+            return { id }
         }
     }
 }

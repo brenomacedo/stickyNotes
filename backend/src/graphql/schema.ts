@@ -5,12 +5,17 @@ export default gql`
         id: Int
         description: String
     }
+    
+    type Id {
+        id: Int
+    }
 
     type Query {
-        tasks: [Task!]!
+        getTasks: [Task!]!
     }
 
     type Mutation {
-        tasks(description: String!): Task!,
+        createTask(description: String!): Task!
+        deleteTask(id: Int!): Id!
     }
 `
