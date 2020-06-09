@@ -20,6 +20,7 @@
   },
   "scripts": {
     "start": "ts-node src/index.ts",
-    "dev": "ts-node-dev --respawn --transpileOnly --ignore-watch node_modules src/index.ts"
+    "dev": "ts-node-dev --respawn --transpileOnly --ignore-watch node_modules src/index.ts",
+    "orm:migrate": "ts-node ./node_modules/typeorm/cli.js migration:run"
   }
 }

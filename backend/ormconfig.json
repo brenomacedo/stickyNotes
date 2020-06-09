@@ -1,0 +1,16 @@
+{
+    "host": "localhost",
+    "port": 5432,
+    "database": "snotes",
+    "type": "postgres",
+    "username": "postgres",
+    "password": "123",
+    "migrationsTableName": "migration_table",
+    "migrations": ["src/database/migrations/*.ts"],
+    "cli": {
+        "migrationsDir": "src/database/migrations"
+    },
+    "entities": [
+        "src/entities/Tasks.ts"
+    ]
+}

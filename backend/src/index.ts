@@ -1,6 +1,11 @@
-import express from 'express'
-const app = express()
+import { ApolloServer, gql } from 'apollo-server'
+import resolvers from './graphql/resolvers'
+import typeDefs from './graphql/schema'
+import path from 'path'
+import './database/database'
 
-app.use(express.json())
+const app = new ApolloServer({
+    typeDefs, resolvers
+})
 
 app.listen(3333)
