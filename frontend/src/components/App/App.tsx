@@ -49,7 +49,7 @@ const App = () => {
              </div>
              <div className="notes">
                 {data?.getTasks.map(item => (
-                    <Note {...item} key={item.id} />
+                    <Note refetch={refetch} {...item} key={item.id} />
                 ))}
              </div>
              <Modal refetch={refetch} modal={modal} handleModal={handleModal} />

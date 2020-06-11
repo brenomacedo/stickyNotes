@@ -21,7 +21,8 @@ const Modal: React.FC<IModal> = props => {
             }
         }
     `
-    const [addTask, { data }] = useMutation(ADD_TASK)
+
+    const [addTask, { data: addTaskData }] = useMutation(ADD_TASK)
 
     const handleAddTask = () => {
 
@@ -29,6 +30,7 @@ const Modal: React.FC<IModal> = props => {
             description: newTask
         } })
 
+        setNewTask('')
         props.refetch()
         props.handleModal()
     }
@@ -37,7 +39,10 @@ const Modal: React.FC<IModal> = props => {
         <div className="modal" style={{ display: props.modal ? 'flex' : 'none' }}>
             <div className="addNote">
                 <div className='modal-icon'>
-                    <FiX onClick={props.handleModal} size={30} color='white' cursor='pointer' />
+                    <FiX onClick={() => {
+                        props.handleModal()
+                        setNewTask('')
+                    }} size={30} color='white' cursor='pointer' />
                 </div>
                 <textarea value={newTask} onChange={e => setNewTask(e.target.value)}></textarea>
                 <button onClick={() => handleAddTask()}>ADICIONAR</button>
