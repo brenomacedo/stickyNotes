@@ -2,9 +2,18 @@
     width: 300px;
     min-height: 200px;
     background-color: azure;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .options {
     padding: 5px;
     background-color: #e3e3e3;
+}
+
+.description {
+    font-family: 'Balsamiq Sans', cursive;
+    padding: 4px;
+    width: 100%;
+    overflow: hidden;
 }

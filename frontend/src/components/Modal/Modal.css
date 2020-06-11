@@ -1,0 +1,42 @@
+.modal {
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal textarea {
+    width: 300px;
+    padding: 5px;
+    font-family: 'Balsamiq Sans', cursive;
+    outline: 0;
+    font-size: 20px;
+    resize: none;
+    height: 200px;
+}
+
+.addNote {
+    display: flex;
+    flex-direction: column;
+}
+
+.addNote button {
+    padding: 10px;
+    background-color: #2ce8e8;
+    color: white;
+    font-family: 'Balsamiq Sans', cursive;
+    border: none;
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+.modal-icon {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0;
+}
